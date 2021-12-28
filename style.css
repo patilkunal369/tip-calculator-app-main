@@ -73,6 +73,16 @@ ul li input:focus {
     color: var(--Dark_grayish_cyan_1);
 }
 
+.number-of-people-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+#error{
+    display: none;
+    color: rgba(255, 51, 51);
+}
+
 .tip {
     margin-bottom: 2rem;
 }

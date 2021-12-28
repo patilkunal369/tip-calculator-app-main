@@ -24,22 +24,26 @@
             <div class="input">
                 <div class="bill-amount">
                     <h2>Bill</h2>
-                    <input type="number" placeholder="0" />
+                    <input type="number" placeholder="0" id="amount"/>
                 </div>
                 <div class="tip">
                     <h2>Select tip %</h2>
                     <ul>
-                        <li><button>5%</button></li>
-                        <li><button>10%</button></li>
-                        <li><button>15%</button></li>
-                        <li><button>25%</button></li>
-                        <li><button>50%</button></li>
-                        <li><input type="text" placeholder="Custom" /></li>
+                        <li><button onClick="calculateAmount(5)">5%</button></li>
+                        <li><button onClick="calculateAmount(10)">10%</button></li>
+                        <li><button onClick="calculateAmount(15)">15%</button></li>
+                        <li><button onClick="calculateAmount(25)">25%</button></li>
+                        <li><button onClick="calculateAmount(50)">50%</button></li>
+                        <li><input type="text" placeholder="Custom" id="customTipAmount" onchange="calculateAmount('custom')" /></li>
                     </ul>
                 </div>
                 <div class="number-of-people">
-                    <h2>Number of People</h2>
-                    <input type="number" name="" id="" placeholder="0" />
+                    <div class="number-of-people-title">
+                        <h2 id="numberOfPeopleTitle">Number of People</h2>
+                        <h2 id="error">cannot be zero</h2>
+                    </div>
+                    
+                    <input type="number" id="numberOfPeople" placeholder="0" />
                 </div>
             </div>
             <div class="result">
@@ -50,18 +54,19 @@
                             <p>/person</p>
                         </div>
 
-                        <h4>$0.00</h4>
+                        <h4 id="tipAmountPerPerson">$0.00</h4>
                     </li>
                     <li>
                         <div>
                             <h3>Total</h3>
                             <p>/person</p>
                         </div>
-                        <h4>$0.00</h4>
+                        <h4 id="totalPerPerson">$0.00</h4>
                     </li>
                 </ul>
                 <button>Reset</button>
             </div>
         </main>
+        <script src="./app.js"></script>
     </body>
 </html>
